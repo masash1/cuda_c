@@ -30,6 +30,7 @@ void gradientDescent(float *x, float *y, float *theta, float alpha, int num_iter
 			sigma[1] += ((theta[0] + theta[1] * x[i]) - y[i]) * x[i];
 		}
 
+		// compute new theta
 		theta[0] = theta[0] - (alpha / m) * sigma[0];
 		theta[1] = theta[1] - (alpha / m) * sigma[1];
 
@@ -48,7 +49,7 @@ void gradientDescent(float *x, float *y, float *theta, float alpha, int num_iter
 
 long timediff(clock_t t1, clock_t t2) {
 	long elapsed;
-	elapsed = ((double)t2 - t1) / CLOCKS_PER_SEC * 1000;
+	elapsed = (double)(t2 - t1) / CLOCKS_PER_SEC * 1000;
 	return elapsed;
 }
 
